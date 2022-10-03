@@ -9,8 +9,10 @@
 <body>
 	<h1>Capitulo 4: Fuentes web</h1>
 	<p>Son tipos de letra como los que hemos hablado en <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Styling_text/Fundamentals">fundamentos para el texto</a> pero se detallará el uso de las tipografias web para lograr un estilo más personalizado.</p>
+
 	<h2>Introducción a las fuentes web</h2>
 	<p>Con <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-family">font-family</a> podemos aplicar una lista de fuentes y el navegador buscará la que tenga el sistema y se mostrará. Hay un conjunto de fuentes que están en todos los sistemas: <em>Arial</em> (sans-serif), <em>Courier New</em> (monospace), <em>Georgia</em> (serif), <em>Times New Roman</em> (serif), <em>Trebuchef MS</em> (sans-serif), <em>Verdana</em> (sans-serif). Tambien hay fuentes predeterminadas: serif, sans-serif, monospace, cursive, fantasy. El problema de este metodo es que puede desencajar con tus diseños.</p>
+
 	<h2>Web fonts</h2>
 	<p>Es una función de CSS que adminte archivos de fuentes para que se descargen cuando el usuario accede al sitio, para no depender de las fuentes que dispone el sistema.</p>
 	<p>En la primera linea del CSS se declara la funcion <a href="https://developer.mozilla.org/es/docs/Web/CSS/@font-face">@font-face</a>, usamos la propiedad <em>font-family</em> para nombrar la fuente y la propiedad <em>src</em> con la funcion <em>url()</em> y la dirección donde se encuentra nuestra fuente.</p>
@@ -20,6 +22,7 @@
 		<li>Los navegadores adminte diferentes formatos de letras, por ejemplo, los modernos adminten <em>WOFF/WOFF2</em> (Web Open Font Format 1 y 2). Las versiones antiguas de IE admiten <em>EOT</em> (Embedded Open Type). Para navegadores antiguos de Iphone y Android se usa <em>SVG.</em></li>
 		<li>Las fuentes pueden tener un costo y/o respetar las condiciones de la licencia como puede ser otorgar los creditos al creador.</li>
 	</ol>
+
 	<h2>Encontrar Web fonts</h2>
 	<p></p>
 	<ul>
@@ -34,6 +37,7 @@
 	<p>Bajamos los archivos HTML y CSS de ejemplo para practicar de forma local.</p>
 	<p>Vamos a <a href="https://www.fontsquirrel.com/">Font Squirrel</a> a eleguir dos tipos de letra, una para encabezados (puede ser de tipo Display o Slab serif) y otra para parrafos (menos llamativa y comoda para leer como sans). Descargamos el archivo, no importa el formato (TTF o OTF) y lo guardamos en la carpeta del HTML y CSS, descomprimir el zip para ver y elegir las fuentes.</p>
 	<p>El archivo generalmente zip, puede tener varias versiones de una misma fuente (como thin, regular, normal, bold, etc) y archivo de licencia.</p>
+
 	<h2>Generar el código</h2>
 	<p>Necesitamos un codigo para aplicar la fuente web, siguiendo:</p>
 	<ol>
@@ -44,6 +48,7 @@
 		<li>Descargar el kit.</li>
 	</ol>
 	<p>Cuando el generador haya terminado, deberas descargar el archivo zip y guardarlo en la carpeta donde esta el HTML y el CSS.</p>
+
 	<h2>Aplicando fuentes a la web</h2>
 	<p>Una vez descomprimido el zip, vemos varios archivos utiles:</p>
 	<ul>
@@ -59,6 +64,7 @@
 		<li>Ahora podemos usar estas fuentes en la propiedad <em>font-family</em> con el nombre de la fuente descargada y hacer una lista.</li>
 	</ol>
 	<p>Con las demas propiedades de CSS para las fuentes podemos ajustarlas para darle un mejor aspecto del que viene determinada.</p>
+
 	<h2>Servicios de fuentes online</h2>
 	<p>Proporcionan fuentes con tan solo copiar unas lineas de codigo sin utilizar <em>@font-face</em>. Hay servicios de pago como: <a href="https://fonts.adobe.com/">Adobe Fonts</a> y <a href="https://www.typography.com/webfonts">Cloud.typography</a> y gratuitos como <a href="https://www.google.com/fonts">Google Fonts</a>.</p>
 	<p>Podemos usar el servicio de google en los ejemplos de practica anteriores.</p>
@@ -68,6 +74,7 @@
 		<li>Podemos personalizar estas fuentes con las propiedades adecuadas.</li>
 		<li>Si usamos las hojas de practica anteriores tenemos que comentar las líneas correspondientes a <em>@font-face</em> y cambiar el nombre de los tipos de letras.</li>
 	</ol>
+
 	<h2>@font-face al detalle</h2>
 	<p>Algunas propiedades que podemos encontrar en su declaración:</p>
 	<ul>
@@ -75,6 +82,7 @@
 		<li><strong>src</strong>: Se definen las rutas de acceso a los archivos o recursos. Aparecen como funciones como <em>url()</em> format() en donde se pone la ruta y el tipo de archivo para compatibilidad. Vemos que podemos poner varias declaraciones separadas por comas. Para versiones viejas de IE se colocan primero las fuentes de formato <em>EOT</em>.</li>
 		<li><a href="https://developer.mozilla.org/es/docs/Web/CSS/font-weight">font-weight</a> y <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-style">font-style</a>: Se trata del grueso y la cursiva de la letra para los elementos de texto. Cuando importamos variaciones de una fuente definimos su stylo y grueso con el mismo nombre de fuente.</li>
 	</ul>
+	
 	<h2>Fuentes variables</h2>
 	<p>Permiten incorporar variaciones a la letra en un mismo archivo sin necesidad de tener varios archivos con una misma fuente pero de distinto aspecto (como cuando descargamos fuentes de <em>Font Squirrel</em>) a traves de CSS y la propiedad <em>@font-face</em>.</p>
 	<p>Se logran fuentes extremadamente personalizables que permite explotar la creatividad. Puedes aprender más en la extensa guía sobre <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide">fuentes variables en MDN</a>.</p>

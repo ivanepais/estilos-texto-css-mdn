@@ -9,6 +9,7 @@
 <body>
 	<h1>Capitulo 3: Estilo a los enlaces</h1>
 	<p>Hay que tener en cuenta algunas <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#%c2%bfqu%c3%a9_es_una_pseudoclase">pseudoclases</a> que se usan para los links, hay una lista que puedes revisar. Tambien puedes repasar como <a href="https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#primer_acercamiento_a_urls_y_rutas">manejar los enlaces</a> hacia archivos locales y hacia la web.</p>
+
 	<h2>Los estados en un enlace</h2>
 	<p>Pueden diseñarse usando las siguientes pseudoclases</p>
 	<ul>
@@ -18,6 +19,7 @@
 		<li><strong>Focus</strong>: Si un elemento o enlace tiene foco, el usuario puede usar la tecla <span>tab</span> para llegar a él. Se hace con <a href="https://developer.mozilla.org/es/docs/Web/CSS/:focus">:focus</a>.</li>
 		<li><strong>Active</strong>: El enlace puede cambiar de apariencia o color cuando se hace click, se puede ver en un enlace que tenga esta pseudoclase <a href="https://developer.mozilla.org/es/docs/Web/CSS/:active">:active</a> si se mantiene apretado el click. A diferencia de <em>:visited</em> que se activa despues del click, <em>:active</em> funciona al momento.</li>
 	</ul>
+
 	<h2>Enlaces predeterminados</h2>
 	<p>Por defecto vienen:</p>
 	<ul>
@@ -39,13 +41,16 @@
 		<li><a href="https://developer.mozilla.org/es/docs/Web/CSS/cursor">cursor</a> para el tipo del cursor (no se recomienda deshabilitarlo).</li>
 		<li><a href="https://developer.mozilla.org/es/docs/Web/CSS/outline">outline</a> es el contorno del texto, similar a un borde. Es ayuda de accesibilidad, no se recomienda desactivarlo.</li>
 	</ul>
+
 	<h2>Creando enlaces</h2>
 	<p>En la hoja de CSS hay que seleccionar al enlace y escribir una pseudoclase (si se desea).</p>
 	<p>El orden de los pseudoclases importa, así un enlace va tomando la caracteristica de estas y puede funcionar correctamente.</p>
 	<p>El orden es el siguiente: <strong>L</strong> (<em>:link</em>). <strong>V</strong> (<em>:visited</em>). <strong>F</strong> (<em>:focus</em>). <strong>H</strong> (<em>:hover</em>). <strong>A</strong> (<em>:active</em>).</p>
+
 	<h2>Iconos en los enlaces</h2>
 	<p>Primero tenemos que usar un <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors#selectores_de_atributo">selector de atributo</a> que es <em>href</em> con una palabra que tenga, en este caso: <em>"html"</em>. Utilizamos la propiedad abreviada <a href="https://developer.mozilla.org/es/docs/Web/CSS/background">background</a>, su valor <em>url()</em> para insertar la dirección de la imagen; usamos <em>no repeat</em> para que aparezca una sola copia y luego especificamos una posición adecuada para la imagen como 100% y 0 (derecha superior) o right top.</p>
 	<p>Para el tamaño de la imagen usamos <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-size">background-size</a> con 16px de ancho y alto.</p>
+	
 	<h2>Aspecto de botón en un enlace</h2>
 	<p>La pseudoclase <em>:hover</em> se puede usar para señalar (si se desea) distintos elementos en la web como parrafos o listas, etc.</p>
 	<p>Otra cosa comun es dar a los enlaces forma de botón, para un menu de naveción que contiene una lista de enlaces con botones.</p>
