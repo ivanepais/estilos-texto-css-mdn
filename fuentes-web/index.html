@@ -12,6 +12,13 @@
 
 	<h2>Introducción a las fuentes web</h2>
 	<p>Con <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-family">font-family</a> podemos aplicar una lista de fuentes y el navegador buscará la que tenga el sistema y se mostrará. Hay un conjunto de fuentes que están en todos los sistemas: <em>Arial</em> (sans-serif), <em>Courier New</em> (monospace), <em>Georgia</em> (serif), <em>Times New Roman</em> (serif), <em>Trebuchef MS</em> (sans-serif), <em>Verdana</em> (sans-serif). Tambien hay fuentes predeterminadas: serif, sans-serif, monospace, cursive, fantasy. El problema de este metodo es que puede desencajar con tus diseños.</p>
+	<code>
+		<!--	
+			p {
+			  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+			}
+		 -->
+	</code>	
 
 	<h2>Web fonts</h2>
 	<p>Es una función de CSS que adminte archivos de fuentes para que se descargen cuando el usuario accede al sitio, para no depender de las fuentes que dispone el sistema.</p>
@@ -22,6 +29,18 @@
 		<li>Los navegadores adminte diferentes formatos de letras, por ejemplo, los modernos adminten <em>WOFF/WOFF2</em> (Web Open Font Format 1 y 2). Las versiones antiguas de IE admiten <em>EOT</em> (Embedded Open Type). Para navegadores antiguos de Iphone y Android se usa <em>SVG.</em></li>
 		<li>Las fuentes pueden tener un costo y/o respetar las condiciones de la licencia como puede ser otorgar los creditos al creador.</li>
 	</ol>
+	<code>
+		<!--
+			@font-face {
+			  font-family: "myFont";
+			  src: url("myFont.woff2");
+			}
+
+			html {
+			  font-family: "myFont", "Bitstream Vera Serif", serif;
+			}
+		 -->
+	</code>	
 
 	<h2>Encontrar Web fonts</h2>
 	<p></p>
@@ -63,7 +82,30 @@
 		<li>El codigo que copiamos hay funciones <em>url()</em>, ahí ponemos la direccion de nuestra carpeta de fuentes: <span>fonts/</span> seguido del nombre de los archivos de fuente.</li>
 		<li>Ahora podemos usar estas fuentes en la propiedad <em>font-family</em> con el nombre de la fuente descargada y hacer una lista.</li>
 	</ol>
+
+	<code>
+		<!--
+			@font-face {
+			  font-family: "zantrokeregular";
+			  src: url("fonts/zantroke-webfont.woff2") format("woff2"), url("fonts/zantroke-webfont.woff")
+			      format("woff");
+			  font-weight: normal;
+			  font-style: normal;
+			}
+
+			font-family: "zantrokeregular", serif;
+		 -->
+	</code>
+
 	<p>Con las demas propiedades de CSS para las fuentes podemos ajustarlas para darle un mejor aspecto del que viene determinada.</p>
+
+	<p>Tambien podemos convertir los tipos de fuente en otros, por ejemplo de ttf a wolf.</p>
+	<ul>
+		<li>Con el repo <a href="https://github.com/bramstein/sfnt2woff-zopfli">sfnt2woff</a> convertimos el tipo ttf a woff.</li>
+		<li>Con <a href="https://fontforge.org/">fontforge</a> convertimos ttf a svg.</li>
+		<li>Con <a href="https://people.apache.org/~clay/batik/ttf2svg.html">batik</a> convertimos ttf a svg.</li>
+		<li>Con <a href="https://github.com/google/woff2">woff2</a> convertimos ttf a woff2.</li>
+	</ul>
 
 	<h2>Servicios de fuentes online</h2>
 	<p>Proporcionan fuentes con tan solo copiar unas lineas de codigo sin utilizar <em>@font-face</em>. Hay servicios de pago como: <a href="https://fonts.adobe.com/">Adobe Fonts</a> y <a href="https://www.typography.com/webfonts">Cloud.typography</a> y gratuitos como <a href="https://www.google.com/fonts">Google Fonts</a>.</p>
@@ -73,10 +115,22 @@
 		<li>En el icono superior derecho desplegamos un menú para copiar el código HTML que va en la etiqueta <em>head</em> y el codigo CSS para nuestra hoja de estilo.</li>
 		<li>Podemos personalizar estas fuentes con las propiedades adecuadas.</li>
 		<li>Si usamos las hojas de practica anteriores tenemos que comentar las líneas correspondientes a <em>@font-face</em> y cambiar el nombre de los tipos de letras.</li>
-	</ol>
+	</ol>	
 
 	<h2>@font-face al detalle</h2>
 	<p>Algunas propiedades que podemos encontrar en su declaración:</p>
+	<code>
+		<!--
+			@font-face {
+			  font-family: "zantrokeregular";
+			  src: url("zantroke-webfont.woff2") format("woff2"), url("zantroke-webfont.woff")
+			      format("woff");
+			  font-weight: normal;
+			  font-style: normal;
+			}
+		 -->
+	</code>	
+
 	<ul>
 		<li><strong>font-family</strong>: Deberias especificar el nombre de la fuente que estas usando, es recomendable que mantengas los tipos de fuentes para cada sección del sitio.</li>
 		<li><strong>src</strong>: Se definen las rutas de acceso a los archivos o recursos. Aparecen como funciones como <em>url()</em> format() en donde se pone la ruta y el tipo de archivo para compatibilidad. Vemos que podemos poner varias declaraciones separadas por comas. Para versiones viejas de IE se colocan primero las fuentes de formato <em>EOT</em>.</li>

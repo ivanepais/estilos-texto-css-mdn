@@ -46,14 +46,106 @@
 	<p>En la hoja de CSS hay que seleccionar al enlace y escribir una pseudoclase (si se desea).</p>
 	<p>El orden de los pseudoclases importa, así un enlace va tomando la caracteristica de estas y puede funcionar correctamente.</p>
 	<p>El orden es el siguiente: <strong>L</strong> (<em>:link</em>). <strong>V</strong> (<em>:visited</em>). <strong>F</strong> (<em>:focus</em>). <strong>H</strong> (<em>:hover</em>). <strong>A</strong> (<em>:active</em>).</p>
+	<code>
+		<!--
+			body {
+			  width: 300px;
+			  margin: 0 auto;
+			  font-size: 1.2rem;
+			  font-family: sans-serif;
+			}
+
+			p {
+			  line-height: 1.4;
+			}
+
+			a {
+			  outline: none;
+			  text-decoration: none;
+			  padding: 2px 1px 0;
+			}
+
+			a:link {
+			  color: #265301;
+			}
+
+			a:visited {
+			  color: #437a16;
+			}
+
+			a:focus {
+			  border-bottom: 1px solid;
+			  background: #bae498;
+			}
+
+			a:hover {
+			  border-bottom: 1px solid;
+			  background: #cdfeaa;
+			}
+
+			a:active {
+			  background: #265301;
+			  color: #cdfeaa;
+			}
+		 -->
+	</code>		
 
 	<h2>Iconos en los enlaces</h2>
 	<p>Primero tenemos que usar un <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors#selectores_de_atributo">selector de atributo</a> que es <em>href</em> con una palabra que tenga, en este caso: <em>"html"</em>. Utilizamos la propiedad abreviada <a href="https://developer.mozilla.org/es/docs/Web/CSS/background">background</a>, su valor <em>url()</em> para insertar la dirección de la imagen; usamos <em>no repeat</em> para que aparezca una sola copia y luego especificamos una posición adecuada para la imagen como 100% y 0 (derecha superior) o right top.</p>
 	<p>Para el tamaño de la imagen usamos <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-size">background-size</a> con 16px de ancho y alto.</p>
+	<code>
+		<!--
+			a[href^="http"] {
+			  background: url("external-link-52.png") no-repeat 100% 0;
+			  background-size: 16px 16px;
+			  padding-right: 19px;
+			}
+		 -->
+	</code>		
 	
 	<h2>Aspecto de botón en un enlace</h2>
 	<p>La pseudoclase <em>:hover</em> se puede usar para señalar (si se desea) distintos elementos en la web como parrafos o listas, etc.</p>
 	<p>Otra cosa comun es dar a los enlaces forma de botón, para un menu de naveción que contiene una lista de enlaces con botones.</p>
+	<code>
+		<!--
+			body,
+			html {
+			  margin: 0;
+			  font-family: sans-serif;
+			}
+
+			.container {
+			  display: flex;
+			  gap: 0.625%;
+			}
+
+			a {
+			  flex: 1;
+			  text-decoration: none;
+			  outline: none;
+			  text-align: center;
+			  line-height: 3;
+			  color: black;
+			}
+
+			a:link,
+			a:visited,
+			a:focus {
+			  background: palegoldenrod;
+			  color: black;
+			}
+
+			a:hover {
+			  background: orange;
+			}
+
+			a:active {
+			  background: darkred;
+			  color: white;
+			}
+		 -->
+	</code>	
+
 	<p>Propiedades interesantes que se pueden usar:</p>
 	<ul>
 		<li>Utilizamos <a href="https://developer.mozilla.org/es/docs/Web/CSS/display">display</a> para cambiar el comportamiento de los elementos <em>a</em> y <em>li</em>.</li>
